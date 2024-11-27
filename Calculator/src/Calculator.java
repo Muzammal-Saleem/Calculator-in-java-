@@ -212,6 +212,51 @@ public class Calculator implements ActionListener {
                 textField.setText(string);
 
             }
+        } else if (source == buttonEqual) {
+            switch (calculation) {
+                case 1:
+                    answer = number + Double.parseDouble(textField.getText());
+                    if (Double.toString(answer).endsWith(".0")) {
+                        textField.setText(Double.toString(answer).replace(".0", ""));
+                    } else {
+                        textField.setText(Double.toString(answer));
+                    }
+                    label.setText("");
+                    break;
+                case 2:
+                    answer = number - Double.parseDouble(textField.getText());
+                    if (Double.toString(answer).endsWith(".0")) {
+                        textField.setText(Double.toString(answer).replace(".0", ""));
+                    } else {
+                        textField.setText(Double.toString(answer));
+                    }
+                    label.setText("");
+                    break;
+                case 3:
+                    answer = number * Double.parseDouble(textField.getText());
+                    if (Double.toString(answer).endsWith(".0")) {
+                        textField.setText(Double.toString(answer).replace(".0", ""));
+                    } else {
+                        textField.setText(Double.toString(answer));
+                    }
+                    label.setText("");
+                    break;
+                case 4:
+                    if (Double.parseDouble(textField.getText())==0.0){
+                        textField.setText("Math Error...");
+                        break;
+                    }
+                    answer = number / Double.parseDouble(textField.getText());
+                    if (Double.toString(answer).endsWith(".0")) {
+                        textField.setText(Double.toString(answer).replace(".0", ""));
+                    } else {
+                        textField.setText(Double.toString(answer));
+                    }
+                    label.setText("");
+                    break;
+
+            }
+
         }
     }
 
